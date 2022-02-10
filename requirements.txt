@@ -1,0 +1,2 @@
+# Function dependencies
+looker-sdk==21.20.0
