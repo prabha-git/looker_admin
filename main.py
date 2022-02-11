@@ -53,8 +53,7 @@ def hello_world(request):
         plan_dest_body=[]
         for plan_destination in plan['scheduled_plan_destination']:
             body = dict(plan_destination)
-            #body['message']=  "This will expire in about "+ expr_date.strftime("%m/%d/%Y")
-            body['message']=  "Custom Message..."
+            body['message']=  "This email schedule will expire on   "+ expr_date.strftime("%m/%d/%Y")+ ". If you still need it, you need to reschedule it again on or before the expiry date."
             plan_dest_body.append(models40.ScheduledPlanDestination(**body))
     
         pprint("Updating the the plan destination property as follows\n", plan_dest_body)
